@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zco-eE-gKc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="微信登录"/>
+                                <connections>
+                                    <action selector="weixinLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Jy-Bk-k1x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBE-oO-feS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="朋友圈分享"/>
+                                <connections>
+                                    <action selector="friendShareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fye-GB-tvf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-aL-6W0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="微信分享"/>
+                                <connections>
+                                    <action selector="weixinShareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Hg-AJ-f8e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9EU-aL-6W0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BBW-jp-7Ql"/>
+                            <constraint firstItem="Zco-eE-gKc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GFj-bJ-Xgh"/>
+                            <constraint firstItem="Zco-eE-gKc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="JP7-lI-xke"/>
+                            <constraint firstItem="9EU-aL-6W0" firstAttribute="width" secondItem="Zco-eE-gKc" secondAttribute="width" id="KgI-ys-lKj"/>
+                            <constraint firstItem="mBE-oO-feS" firstAttribute="height" secondItem="Zco-eE-gKc" secondAttribute="height" id="NdS-Cz-hUo"/>
+                            <constraint firstItem="9EU-aL-6W0" firstAttribute="height" secondItem="Zco-eE-gKc" secondAttribute="height" id="Q13-eE-JXP"/>
+                            <constraint firstItem="9EU-aL-6W0" firstAttribute="top" secondItem="Zco-eE-gKc" secondAttribute="bottom" constant="1" id="U3d-QD-PWj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mBE-oO-feS" secondAttribute="bottom" constant="1" id="cK8-Yq-zaD"/>
+                            <constraint firstItem="mBE-oO-feS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dQb-z6-NYQ"/>
+                            <constraint firstItem="mBE-oO-feS" firstAttribute="width" secondItem="Zco-eE-gKc" secondAttribute="width" id="eHi-hg-Ray"/>
+                            <constraint firstItem="mBE-oO-feS" firstAttribute="top" secondItem="9EU-aL-6W0" secondAttribute="bottom" constant="1" id="qDS-XC-Kyy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Zco-eE-gKc"/>
+                                <exclude reference="mBE-oO-feS"/>
+                                <exclude reference="9EU-aL-6W0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="GFj-bJ-Xgh"/>
+                                <exclude reference="JP7-lI-xke"/>
+                                <exclude reference="BBW-jp-7Ql"/>
+                                <exclude reference="KgI-ys-lKj"/>
+                                <exclude reference="Q13-eE-JXP"/>
+                                <exclude reference="U3d-QD-PWj"/>
+                                <exclude reference="NdS-Cz-hUo"/>
+                                <exclude reference="dQb-z6-NYQ"/>
+                                <exclude reference="eHi-hg-Ray"/>
+                                <exclude reference="qDS-XC-Kyy"/>
+                                <exclude reference="cK8-Yq-zaD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Zco-eE-gKc"/>
+                                <include reference="mBE-oO-feS"/>
+                                <include reference="9EU-aL-6W0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="GFj-bJ-Xgh"/>
+                                <include reference="JP7-lI-xke"/>
+                                <include reference="BBW-jp-7Ql"/>
+                                <include reference="KgI-ys-lKj"/>
+                                <include reference="Q13-eE-JXP"/>
+                                <include reference="U3d-QD-PWj"/>
+                                <include reference="NdS-Cz-hUo"/>
+                                <include reference="dQb-z6-NYQ"/>
+                                <include reference="eHi-hg-Ray"/>
+                                <include reference="qDS-XC-Kyy"/>
+                                <include reference="cK8-Yq-zaD"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="282" y="319.5"/>
         </scene>
     </scenes>
 </document>
