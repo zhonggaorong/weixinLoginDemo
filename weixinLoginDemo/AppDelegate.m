@@ -104,6 +104,26 @@
             [alert show];
         }
     }
+    
+    /*
+    0  展示成功页面
+    -1  可能的原因：签名错误、未注册APPID、项目设置APPID不正确、注册的APPID与设置的不匹配、其他异常等。
+    -2  用户取消	无需处理。发生场景：用户不支付了，点击取消，返回APP。
+     */
+    if ([resp isKindOfClass:[PayResp class]]) { // 微信支付
+        
+        PayResp*response=(PayResp*)resp;
+        switch(response.errCode){
+            case 0:
+                //服务器端查询支付通知或查询API返回的结果再提示成功
+                NSLog(@"支付成功");
+                break;
+                
+            default:
+                NSLog(@"支付失败，retcode=%d  errormsg %@",resp.errCode ,resp.errStr);
+                break;
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

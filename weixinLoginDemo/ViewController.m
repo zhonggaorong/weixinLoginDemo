@@ -10,12 +10,15 @@
 #import "WXApi.h"
 #import "AppDelegate.h"
 //微信开发者ID
-#define URL_APPID @"appid "
-#define URL_SECRET @"app secret"
+#define URL_APPID @"wx5efead4057f98bc0"
+#define URL_SECRET @"8faed9acaf9579485bd2b18b4ba28365"
 #import "AFNetworking.h"
+#import "WeixinPayHelper.h"
+
 @interface ViewController ()<WXDelegate>
 {
     AppDelegate *appdelegate;
+    WeixinPayHelper *helper;
 }
 @end
 
@@ -175,11 +178,12 @@ WXTextObject       多媒体消息中包含的文本数据对象
     //如果我们想要监听是否成功分享，我们就要去appdelegate里面 找到他的回调方法
     // -(void) onResp:(BaseResp*)resp .我们可以自定义一个代理方法，然后把分享的结果返回回来。
     appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    //添加对appdelgate的微信分享的代理
     appdelegate.wxDelegate = self;
     BOOL isSuccess = [WXApi sendReq:sentMsg];
     
     
-    //添加对appdelgate的微信分享的代理
+    
     
 }
 
@@ -189,6 +193,33 @@ WXTextObject       多媒体消息中包含的文本数据对象
     [alert show];
 }
 
+#pragma mark 微信支付
+- (IBAction)weixinPayAction:(id)sender {
+    
+    
+    /**
+     *  外界调用的微信支付方法
+     *
+     *  @param ordeNumber  系统下发订单号%100000000 得出的数字，确保唯一。
+     *  @param myNumber    订单号  确保唯一
+     *  @param price       价格
+     付款流程:
+     
+     1. 获取 AccessToken
+     2. 获取 genPackage
+     3. 调起微信付款
+     4. 在appdelegate 中的 onResp 监听 回调方法。 看是付款成功。
+     
+     回调代码参数说明：
+     0  展示成功页面
+     -1  可能的原因：签名错误、未注册APPID、项目设置APPID不正确、注册的APPID与设置的不匹配、其他异常等。
+     -2  用户取消	无需处理。发生场景：用户不支付了，点击取消，返回APP。
+     */
+
+    helper = [[WeixinPayHelper alloc] init];
+    [helper payProductWith:@"Test Product" andName:@"product number 1" andPrice:[NSString stringWithFormat:@"%d",1500]];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

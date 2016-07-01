@@ -25,7 +25,10 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx5efead4057f98bc0</string>
+				<string>wei</string>
+				<string>xin</string>
+				<string>APP</string>
+				<string>id</string>
 			</array>
 		</dict>
 	</array>

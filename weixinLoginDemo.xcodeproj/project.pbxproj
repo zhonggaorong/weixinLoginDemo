@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9C8D23CBB2F3FB93327B3ADB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBC15543A6C54A18B83A6AF /* libPods.a */; };
+		9D942BD21D26161600493C5B /* WeixinPayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D942BD11D26161600493C5B /* WeixinPayHelper.m */; };
+		9D942BD51D26172A00493C5B /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D942BD41D26172A00493C5B /* CommonUtil.m */; };
+		9D942BD91D2620FA00493C5B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D942BD81D2620FA00493C5B /* GTMBase64.m */; };
 		9D9B2A671D1B84A200EF32E6 /* 消息中心 icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B2A661D1B84A200EF32E6 /* 消息中心 icon.png */; };
 		9DD889B21D17896E00131637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889B11D17896E00131637 /* main.m */; };
 		9DD889B51D17896E00131637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889B41D17896E00131637 /* AppDelegate.m */; };
@@ -46,6 +49,14 @@
 		28F8EB2186DA1AEC0098ACE7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5FBC15543A6C54A18B83A6AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AFAAD6CB7E6083AB73C030 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9D942BD01D26161600493C5B /* WeixinPayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeixinPayHelper.h; sourceTree = "<group>"; };
+		9D942BD11D26161600493C5B /* WeixinPayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeixinPayHelper.m; sourceTree = "<group>"; };
+		9D942BD31D26172A00493C5B /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		9D942BD41D26172A00493C5B /* CommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
+		9D942BD61D26173A00493C5B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		9D942BD71D2620FA00493C5B /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		9D942BD81D2620FA00493C5B /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		9D942BDA1D26211800493C5B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		9D9B2A661D1B84A200EF32E6 /* 消息中心 icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息中心 icon.png"; sourceTree = "<group>"; };
 		9DD889AD1D17896E00131637 /* weixinLoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weixinLoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD889B11D17896E00131637 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -157,6 +168,14 @@
 				9DD889E71D17968500131637 /* WechatAuthSDK.h */,
 				9DD889E51D17967F00131637 /* WXApi.h */,
 				9DD889E61D17967F00131637 /* WXApiObject.h */,
+				9D942BD31D26172A00493C5B /* CommonUtil.h */,
+				9D942BD41D26172A00493C5B /* CommonUtil.m */,
+				9D942BD71D2620FA00493C5B /* GTMBase64.h */,
+				9D942BD81D2620FA00493C5B /* GTMBase64.m */,
+				9D942BDA1D26211800493C5B /* GTMDefines.h */,
+				9D942BD61D26173A00493C5B /* Constant.h */,
+				9D942BD01D26161600493C5B /* WeixinPayHelper.h */,
+				9D942BD11D26161600493C5B /* WeixinPayHelper.m */,
 				9DD889B31D17896E00131637 /* AppDelegate.h */,
 				9DD889B41D17896E00131637 /* AppDelegate.m */,
 				9DD889B61D17896E00131637 /* ViewController.h */,
@@ -379,8 +398,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D942BD51D26172A00493C5B /* CommonUtil.m in Sources */,
+				9D942BD91D2620FA00493C5B /* GTMBase64.m in Sources */,
 				9DD889B81D17896E00131637 /* ViewController.m in Sources */,
 				9DD889B51D17896E00131637 /* AppDelegate.m in Sources */,
+				9D942BD21D26161600493C5B /* WeixinPayHelper.m in Sources */,
 				9DD889B21D17896E00131637 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
