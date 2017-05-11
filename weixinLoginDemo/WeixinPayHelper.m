@@ -10,7 +10,7 @@
 #import "CommonUtil.h"
 #import "Constant.h"
 
-#define ISOFTEN_WECHARPAY_URL            @"https://www.sizzee.com/tenpay/payment/mobilesuccess"
+#define ISOFTEN_WECHARPAY_URL            @"xxxx"
 
 @interface WeixinPayHelper()
 
